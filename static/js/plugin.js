@@ -11,6 +11,6 @@ $(document).ready(function() {
 
      var handler = publicHostname + '/hs_plugin_handler.html?' + username;
 
-     hsp.showCustomPopup(handler, 'App Plugin popup');
+     hsp.showCustomPopup(handler, 'Full Contact Information');
    }
 });
