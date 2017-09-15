@@ -31,7 +31,7 @@ var username = decodeURIComponent(getQuerystring('username'))
 			}
 
 			if (newData.contactInfo != undefined) {
-	      		addField ('h1', newData.contactInfo.givenName, '2-3', '.results');
+	      		addField ('h1', newData.contactInfo.givenName, '1', '.results');
 	     	} else {
 	     		if (Array.isArray(newData.socialProfiles)) {
 	     			addField ('h1', newData.socialProfiles[0].username, '2-3', '.results');
@@ -43,7 +43,7 @@ var username = decodeURIComponent(getQuerystring('username'))
 	    	}
 
 	      	// Social network section
-	      	addField ('h3', 'Social Networks [Click to Expand]', '1 socialToggle', '.results');
+	      	addField ('h3', 'Social Networks <i id="socialChev" class="fa fa-chevron-down"></i>', '1 socialToggle', '.results');
 
 	      	addField ('div', '', '1 socialContainer', '.results');
 
@@ -51,6 +51,12 @@ var username = decodeURIComponent(getQuerystring('username'))
 
 	      	$('.socialToggle').click(function() {
 	      		$('.socialContainer').slideToggle();
+
+	      		if ($('#socialChev').attr('class').includes('down')) {
+	      			$('#socialChev').attr('class', 'fa fa-chevron-up');
+	      		} else {
+	      			$('#socialChev').attr('class', 'fa fa-chevron-down');
+	      		}
 	      	});
 
 	      	if (Array.isArray(newData.socialProfiles)) {

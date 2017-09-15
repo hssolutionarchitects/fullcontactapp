@@ -53,7 +53,9 @@ Edit assets/js/vars.js and set the publicHostname to the ngork url
 
 Go to Hootsuite Developer portal https://hootsuite.com/developers/my-apps
 
-Create a New App, set the name and description and press Create.
+Create a New App, set the name and description.
+
+Set the Icon and Logo to <ngrok url>/assets/icon16.png and <ngrok url>/assets/icon256.png respectively and press Create.
 
 Click on the new App link.  Click the Edit button.
 
@@ -62,8 +64,8 @@ hsdemosharedsecret and press Save.
 
 Add a New App Component with Type Plugin
 
-Service URL: <ngrok url>/hs_plugin_demo.html
-Icon URL: <ngrok url>/asset/icon.png
+Service URL: <ngrok url>/fullcontact_plugin.html
+Icon URL: <ngrok url>/assets/icon30.png
 
 ## Add the App to Hootsuite
 
@@ -71,40 +73,3 @@ Open Hootsuite https://hootsuite.com/dashboard
 
 Click on the App Directory in the left hand nav.  Under Developers -> My Apps
 install your new App, adding to a new stream.
-
-## Getting your FullContact API Key
-
-Go to https://fullcontact.com and click "Start Building Now".
-
-Create an account with FullContact.
-
-When on the dashboard, you will see your API key in the lower section of the page.
-
-## Creating Config File
-
-Install config through npm
-````
-npm install config
-````
-
-Make a folder for your config files
-````
-mkdir config
-````
-
-create the development version:
-````
-vi config/default.json
-````
-
-Create the production version:
-````
-vi config/production.json
-````
-
-Getting FullContact API key in your code:
-````
-var config = require('config');
-
-var fullContact = config.get('fullContact.apiKey');
-````
