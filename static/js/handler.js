@@ -67,9 +67,8 @@ var username = decodeURIComponent(getQuerystring('username'))
 			      	}
 			    }
 			}
-
 	      	// Add full data at bottom
-	      	var dataDump = $('<div></div>').addClass('pure-u-1').html(data).hide();
+	      	var dataDump = $('<pre></pre>').addClass('pure-u-1').html(JSON.stringify(newData, null, 2)).hide();
 
 	      	var dataDumpToggle = $('<a></a>').addClass('pure-u-1-3').text('Click for more info').attr('href', '#').appendTo('.results').click(function() {
 	      		dataDump.slideToggle();

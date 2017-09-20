@@ -1,32 +1,15 @@
 # Full Contact App
 
-## Start nginx
+## Start docker
 
 ```sh
-docker run --name hs-demo-nginx \
-   -v $PWD/static:/usr/share/nginx/html:ro \
-   -v $PWD/conf.`d:/etc/nginx/conf.d:ro \
-   -p 80 \
-   -p 443 \
-   -d nginx
+docker-compose up
 ````
 
-Verify by going to
+Verify
 
-```sh
-open http://$(docker port hs-demo-nginx 80)/hs_plugin_demo.html
 ````
-
-## Create the tunnel
-
-This is required for the content source demo as Hootsuite needs to verify access
-the image to be loaded into ow.ly
-
-```sh
-docker run --name hs-demo-ngrok \
-    -p 4040 \
-    --link hs-demo-nginx:http \
-    -d wernight/ngrok ngrok http hs-demo-nginx:80
+open $(curl -Ls $(docker port fullcontactapp_ngrok_1 4040)/api/tunnels/command_line | python -c 'import sys, json; print json.load(sys.stdin)["public_url"]')/fullcontact_plugin.html
 ````
 
 Get the ngrok URL
@@ -35,16 +18,10 @@ Get the ngrok URL
 curl -Ls $(docker port fullcontactapp_ngrok_1 4040)/api/tunnels/command_line | python -c 'import sys, json; print json.load(sys.stdin)["public_url"]'
 ````
 
-Verify:
-
-````
-open $(curl -Ls $(docker port fullcontactapp_ngrok_1 4040)/api/tunnels/command_line | python -c 'import sys, json; print json.load(sys.stdin)["public_url"]')/hs_plugin_demo.html
-````
-
 View the traffic
 
 ````
-open http://$(docker port hs-demo-ngrok 4040)
+open http://$(docker port fullcontactapp_ngrok_1 4040)
 ````
 
 Edit assets/js/vars.js and set the publicHostname to the ngork url
