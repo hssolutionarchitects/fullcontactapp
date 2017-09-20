@@ -24,9 +24,15 @@ View the traffic
 open http://$(docker port fullcontactapp_ngrok_1 4040)
 ````
 
-Edit assets/js/vars.js and set the publicHostname to the ngork url
-
 ## Configure
+
+### Full Contact
+
+Go to the Full Contact Portal https://portal.fullcontact.com and download your API key.
+
+In the config directory copy default.json to local.json and add your full contact API key.  For production create a production.json file and set the environment NODE_ENV=production.
+
+### Hootsuite
 
 Go to Hootsuite Developer portal https://hootsuite.com/developers/my-apps
 
