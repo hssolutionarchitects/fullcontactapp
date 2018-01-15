@@ -87,7 +87,7 @@ var username = decodeURIComponent(getQuerystring('username'))
 	      	}
       	}
 
-        // data: 
+        // data:
 /*		{ 	"status" : 200,
         	"requestId" : "c64cc667-89c8-49af-aeda-0dea70118f36",
         	"likelihood" : 0.99,
