@@ -32,6 +32,16 @@ Go to the Full Contact Portal https://portal.fullcontact.com and download your A
 
 In the config directory copy default.json to local.json and add your full contact API key.  For production create a production.json file and set the environment NODE_ENV=production.
 
+### Twitter
+
+###### *As of Hootsuite Dashboard SDK 4 Twitter data is no longer returned hydrated and must be retrieved from the Twitter API manually*
+
+Go to Twitter Application Management https://apps.twitter.com/
+
+Create a new app, set the name, description, and website and press "Create your Twitter application"
+
+Add your Twitter app credentials to your config file in `config/`
+
 ### Hootsuite
 
 Go to Hootsuite Developer portal https://hootsuite.com/developers/my-apps
