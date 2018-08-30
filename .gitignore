@@ -1,5 +1,6 @@
 node_modules/
 datadir/
 config/local.json
+config/production.json
 
 *.DS_Store
